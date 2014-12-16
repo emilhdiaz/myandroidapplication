@@ -1,6 +1,7 @@
 package com.emildiaz.myandroidapplication;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.view.Menu;
@@ -35,8 +36,13 @@ public class MainActivity extends ActionBarActivity {
         return super.onOptionsItemSelected(item);
     }
 
-    public void launchContentProviderExample(View view) {
+    public void launchViewContactsExplicit(View view) {
         Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchViewContactsImplicit(View view) {
+        Intent intent = new Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people/"));
         startActivity(intent);
     }
 
