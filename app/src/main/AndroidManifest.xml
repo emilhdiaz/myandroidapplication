@@ -24,8 +24,13 @@
         </activity>
         <activity
             android:name=".ContactActivity"
-            android:label="@string/title_activity_content_provider"
+            android:label="@string/title_activity_contact"
             android:parentActivityName=".MainActivity" >
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <data android:mimeType="vnd.android.cursor.dir/person" />
+            </intent-filter>
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.emildiaz.myandroidapplication.MainActivity" />
