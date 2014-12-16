@@ -3,10 +3,10 @@
     package="com.emildiaz.myandroidapplication" >
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
-    <uses-permission android:name="android.permission.CALL_PHONE" ></uses-permission>
-    <uses-permission android:name="android.permission.CAMERA" ></uses-permission>
-    <uses-permission android:name="android.permission.READ_CONTACTS" ></uses-permission>
-    <uses-permission android:name="android.permission.INTERNET"/>
+    <uses-permission android:name="android.permission.CALL_PHONE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -28,9 +28,12 @@
             android:parentActivityName=".MainActivity" >
             <intent-filter>
                 <action android:name="android.intent.action.VIEW" />
+
                 <category android:name="android.intent.category.DEFAULT" />
+
                 <data android:mimeType="vnd.android.cursor.dir/person" />
             </intent-filter>
+
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.emildiaz.myandroidapplication.MainActivity" />
@@ -43,13 +46,6 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ContactActivity" />
         </activity>
-
-        <provider
-            android:name=".providers.CommentsContentProvider"
-            android:authorities="com.emildiaz.myandroidapplication.providers"
-            android:exported="true" >
-        </provider>
-
         <activity
             android:name=".RouletteActivity"
             android:label="@string/title_activity_roulette"
@@ -58,6 +54,16 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value="com.emildiaz.myandroidapplication.MainActivity" />
         </activity>
+        <activity
+            android:name=".SettingsActivity"
+            android:label="@string/title_activity_settings" >
+        </activity>
+
+        <provider
+            android:name=".providers.CommentsContentProvider"
+            android:authorities="com.emildiaz.myandroidapplication.providers"
+            android:exported="true" >
+        </provider>
     </application>
 
 </manifest>
