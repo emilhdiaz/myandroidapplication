@@ -1,7 +1,10 @@
 package com.emildiaz.myandroidapplication;
 
 import android.app.Activity;
+import android.content.Context;
 import android.content.Intent;
+import android.content.pm.PackageManager;
+import android.content.pm.ResolveInfo;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
@@ -11,6 +14,8 @@ import android.view.View;
 import android.widget.ArrayAdapter;
 import android.widget.Spinner;
 import android.widget.Toast;
+
+import java.util.List;
 
 public class RouletteActivity extends ActionBarActivity {
 
@@ -67,16 +72,22 @@ public class RouletteActivity extends ActionBarActivity {
             case 5:
                 intent = new Intent(Intent.ACTION_VIEW, Uri.parse("content://contacts/people/"));
                 break;
+            case 6:
+                intent = new Intent("com.unknown.action");
+                break;
+        }
+
+        if (!isIntentAvailable(this, intent)) {
+            Toast.makeText(this, "No application available to handle this action", Toast.LENGTH_LONG).show();
+            return;
         }
 
         startActivity(intent);
     }
 
-    @Override
-    public void onActivityResult(int requestCode, int resultCode, Intent data) {
-        if (resultCode == Activity.RESULT_OK && requestCode == 0) {
-            String result = data.toURI();
-            Toast.makeText(this, result, Toast.LENGTH_LONG);
-        }
+    public static boolean isIntentAvailable(Context context, Intent intent) {
+        final PackageManager mgr = context.getPackageManager();
+        List<ResolveInfo> list = mgr.queryIntentActivities(intent, PackageManager.MATCH_DEFAULT_ONLY);
+        return list.size() > 0;
     }
 }
