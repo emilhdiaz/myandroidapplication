@@ -12,8 +12,15 @@
 
     <Button
         android:id="@+id/content_provider_example_button"
-        android:text="Contact Comments (Content Provider Example)"
+        android:text="Content Provider Example (Contact Comments)"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="launchContentProviderExample"/>
+
+    <Button
+        android:id="@+id/intents_button"
+        android:text="Intents Example"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="launchIntentsExample"/>
 </LinearLayout>

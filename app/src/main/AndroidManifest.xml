@@ -3,6 +3,10 @@
     package="com.emildiaz.myandroidapplication" >
 
     <uses-permission android:name="android.permission.READ_CONTACTS" />
+    <uses-permission android:name="android.permission.CALL_PHONE" ></uses-permission>
+    <uses-permission android:name="android.permission.CAMERA" ></uses-permission>
+    <uses-permission android:name="android.permission.READ_CONTACTS" ></uses-permission>
+    <uses-permission android:name="android.permission.INTERNET"/>
 
     <application
         android:allowBackup="true"
@@ -34,11 +38,21 @@
                 android:name="android.support.PARENT_ACTIVITY"
                 android:value=".ContactActivity" />
         </activity>
-         <provider
-             android:authorities="com.emildiaz.myandroidapplication.providers"
-             android:name=".providers.CommentsContentProvider"
-             android:exported="true">
-         </provider>
+
+        <provider
+            android:name=".providers.CommentsContentProvider"
+            android:authorities="com.emildiaz.myandroidapplication.providers"
+            android:exported="true" >
+        </provider>
+
+        <activity
+            android:name=".RouletteActivity"
+            android:label="@string/title_activity_roulette"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.emildiaz.myandroidapplication.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

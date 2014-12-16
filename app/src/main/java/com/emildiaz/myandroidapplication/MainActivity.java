@@ -7,7 +7,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 
-
 public class MainActivity extends ActionBarActivity {
 
     @Override
@@ -36,6 +35,11 @@ public class MainActivity extends ActionBarActivity {
 
     public void launchContentProviderExample(View view) {
         Intent intent = new Intent(this, ContactActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchIntentsExample(View view) {
+        Intent intent = new Intent(this, RouletteActivity.class);
         startActivity(intent);
     }
 }

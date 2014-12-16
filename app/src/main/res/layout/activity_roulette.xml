@@ -1,0 +1,21 @@
+<GridLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:tools="http://schemas.android.com/tools"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:alignmentMode="alignBounds"
+                android:columnCount="1"
+                tools:context="com.emildiaz.myandroidapplication.RouletteActivity">
+
+    <Spinner
+        android:id="@+id/spinner"
+        android:layout_gravity="fill_horizontal"
+        android:drawSelectorOnTop="true">
+    </Spinner>
+
+    <Button
+        android:id="@+id/trigger"
+        android:onClick="onClick"
+        android:text="Trigger Intent">
+    </Button>
+
+</GridLayout>
