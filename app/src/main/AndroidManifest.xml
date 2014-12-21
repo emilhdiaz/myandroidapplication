@@ -64,6 +64,15 @@
             android:authorities="com.emildiaz.myandroidapplication.providers"
             android:exported="true" >
         </provider>
+
+        <activity
+            android:name=".NotificationActivity"
+            android:label="@string/title_activity_notification"
+            android:parentActivityName=".MainActivity" >
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value="com.emildiaz.myandroidapplication.MainActivity" />
+        </activity>
     </application>
 
 </manifest>

@@ -28,4 +28,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:onClick="launchIntentsExample"/>
+
+    <Button
+        android:id="@+id/notifications_button"
+        android:text="Notifications"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="launchNotificationsExample"/>
 </LinearLayout>

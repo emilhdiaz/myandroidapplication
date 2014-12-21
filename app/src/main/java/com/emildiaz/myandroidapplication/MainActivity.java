@@ -1,5 +1,6 @@
 package com.emildiaz.myandroidapplication;
 
+import android.app.Notification;
 import android.content.Intent;
 import android.net.Uri;
 import android.support.v7.app.ActionBarActivity;
@@ -48,6 +49,11 @@ public class MainActivity extends ActionBarActivity {
 
     public void launchIntentsExample(View view) {
         Intent intent = new Intent(this, RouletteActivity.class);
+        startActivity(intent);
+    }
+
+    public void launchNotificationsExample(View view) {
+        Intent intent = new Intent(this, NotificationActivity.class);
         startActivity(intent);
     }
 }

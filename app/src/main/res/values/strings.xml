@@ -8,5 +8,6 @@
     <string name="title_activity_comment">My.Comments</string>
     <string name="title_activity_roulette">My.Roulette</string>
     <string name="title_activity_settings">SettingsActivity</string>
+    <string name="title_activity_notification">NotificationActivity</string>
 
 </resources>
