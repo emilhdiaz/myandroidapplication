@@ -61,7 +61,7 @@ public class ContactActivity extends ListActivity implements LoaderManager.Loade
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
 
-        if (id == R.id.preferences) {
+        if (id == R.id.action_settings) {
             Intent i = new Intent(this, SettingsActivity.class);
             startActivity(i);
             return true;
